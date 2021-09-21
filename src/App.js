@@ -20,7 +20,7 @@ render(){
   return (
 
     <div> 
-    <input onChange={(event) => this. setState({searchQuery: event.target.value})} placeholder="Search"></input>
+    <input onChange={(event) => this.setState({searchQuery: event.target.value})} placeholder="Search"></input>
     <button onClick={this.getLocation}>Explore!</button>
     </div>
     // <div className="App">
