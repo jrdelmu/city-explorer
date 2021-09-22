@@ -64,8 +64,6 @@ render(){
         <ListGroupItem>Longitude: {this.state.location.lon}</ListGroupItem>
       </ListGroup>
       <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
       </Card.Body>
     </Card>
     )}
