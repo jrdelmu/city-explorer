@@ -1,13 +1,14 @@
 import axios from 'axios';
 import React, {Component} from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-// import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
 // import axios from 'axios';
 // import logo from './logo.svg';
 import './App.css';
+import Weather from './Components/weather.js'
+
 
 class App extends Component {
   constructor(props) {
@@ -26,12 +27,17 @@ class App extends Component {
       const response = await axios.get(url);
       const location = response.data[0];
 
+      const localUrl = 'http://localhost:3000/weatherData?lat=${location.lat}&lon=${location.lon}&searchquery=${this.state.citySelection}';
+      const localResponse = await axios.get(localUrl);
+      console.log(localResponse.data);
+
       console.log(location);
       
       this.setState({
         location,
         error: false,
-      });
+        localResponse
+      }); 
     } catch (error) {
       console.error('Unable to find city', this.state.searchQuery)
       this.setState({
@@ -64,28 +70,13 @@ render(){
         <ListGroupItem>Longitude: {this.state.location.lon}</ListGroupItem>
       </ListGroup>
       <Card.Body>
+        <Weather localResponse={this.state.localResponse.data} />
       </Card.Body>
     </Card>
     )}
 
     {this.state.error && <h2>{this.state.errorMessage}</h2>}
     </div>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload. Changes
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
     );
   }
 }
