@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
-import axios from 'axios';
+// import axios from 'axios';
 // import logo from './logo.svg';
 import './App.css';
 import Weather from './Components/weather.js'
@@ -27,7 +27,7 @@ class App extends Component {
       const response = await axios.get(url);
       const location = response.data[0];
 
-      const localUrl = '';
+      const localUrl = 'http://localhost:3000/weatherData?lat=${location.lat}&lon=${location.lon}&searchquery=${this.state.citySelection}';
       const localResponse = await axios.get(localUrl);
       console.log(localResponse.data);
 
