@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
-// import axios from 'axios';
 // import logo from './logo.svg';
 import './App.css';
 
@@ -16,6 +15,7 @@ class App extends Component {
       searchQuery: '',
       location: {},
       error: false,
+      weather: [],
     }
   }
   
@@ -32,7 +32,10 @@ class App extends Component {
         location,
         error: false,
       });
-    } catch (error) {
+
+      this.getWeather();
+    
+    }catch (error) {
       console.error('Unable to find city', this.state.searchQuery)
       this.setState({
         error: true,
@@ -40,6 +43,28 @@ class App extends Component {
       });
     }
   }
+
+  getWeather = async () => {
+    const weatherUrl = `http://localhost:3001/weatherData?lat=${this.state.location.lat}&lon=${this.state.location.lon}`;
+    console.log(weatherUrl);
+    try {
+      const response = await axios.get(weatherUrl);
+      const weather = response.data;
+      console.log(response);
+
+      this.setState({
+        weather,
+        error: false,
+      })
+
+    } catch (error) {
+      console.error('Unable to find weather data')
+      this.setState({
+        error: true,
+        errorMessage: `${error}. Unable to fetch weather data `,
+    })
+  }
+}
 
 render(){
   return (
@@ -70,22 +95,6 @@ render(){
 
     {this.state.error && <h2>{this.state.errorMessage}</h2>}
     </div>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload. Changes
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
     );
   }
 }
