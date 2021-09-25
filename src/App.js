@@ -20,11 +20,11 @@ class App extends Component {
   }
   
   getLocation = async () => {
-    const url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_APIKEY}&q=${this.state.searchQuery}&format=json`;
+    const locationUrl = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_APIKEY}&q=${this.state.searchQuery}&format=json`;
     
     try {
-      const response = await axios.get(url);
-      const location = response.data[0];
+      const locationResponse = await axios.get(locationUrl);
+      const location = locationResponse.data[0];
 
       console.log(location);
       
@@ -48,9 +48,9 @@ class App extends Component {
     const weatherUrl = `http://localhost:3001/weatherData?lat=${this.state.location.lat}&lon=${this.state.location.lon}`;
     console.log(weatherUrl);
     try {
-      const response = await axios.get(weatherUrl);
-      const weather = response.data;
-      console.log(response);
+      const weatherResponse = await axios.get(weatherUrl);
+      const weather = weatherResponse.data;
+      console.log(weather);
 
       this.setState({
         weather,
