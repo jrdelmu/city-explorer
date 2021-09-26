@@ -20,9 +20,9 @@
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-![Getting Started](./WRRC-images/lab 6.png)
-![Getting Started](./WRRC-images/lab 7.png)
-![Getting Started](./WRRC-images/lab 8.png)
+![Getting Started](WRRC-images/lab 6.png)
+![Getting Started](WRRC-images/lab 7.png)
+![Getting Started](WRRC-images/lab 8.png)
 
 Name of feature: Lat, Long, and map display
 
