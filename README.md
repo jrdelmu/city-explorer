@@ -12,6 +12,12 @@
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
 
+![lab6](https://github.com/jrdelmu/city-explorer/blob/main/WRRC-images/lab-6.png?raw=true)
+
+![lab7](https://github.com/jrdelmu/city-explorer/blob/main/WRRC-images/lab-7.png?raw=true)
+
+![lab8](https://github.com/jrdelmu/city-explorer/blob/main/WRRC-images/lab-8.png?raw=true)
+
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
@@ -19,12 +25,6 @@
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
-
-![lab6](/home/jrdelmu/projects/code301/city-explorer/WRRC-images/lab-6.png)
-
-![lab7](/home/jrdelmu/projects/code301/city-explorer/WRRC-images/lab-7.png)
-
-![lab8](/home/jrdelmu/projects/code301/city-explorer/WRRC-images/lab-8.png)
 
 Name of feature: Lat, Long, and map display
 
