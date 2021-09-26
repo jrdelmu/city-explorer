@@ -23,9 +23,7 @@
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
-## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
-
+### Lab 6
 Name of feature: Lat, Long, and map display
 
 Estimate of time needed to complete: 3 hours
@@ -35,6 +33,22 @@ Start time: 2 PM
 Finish time: 5 PM
 
 Actual time needed to complete: 3 hours
+
+### Lab 7
+Name of feature: render weather
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 9/21/2021 
+
+Finish time: 9/26/2021
+
+Actual time needed to complete: 20 hours -- Yikes!
+
+## Credit and Collaborations
+<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+
+
 
 # Getting Started with Create React App
 
