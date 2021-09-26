@@ -20,7 +20,7 @@
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-![lab6](/WRRC-images//home/jrdelmu/projects/code301/city-explorer/src/WRRC-images/lab-6.png)
+![lab6](/src/WRRC-images/lab-6.png)
 
 ![lab7](/home/jrdelmu/projects/code301/city-explorer/src/WRRC-images/lab-7.png)
 
