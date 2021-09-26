@@ -7,6 +7,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
 // import logo from './logo.svg';
 import './App.css';
+import Weather from './Components/weather'
 
 class App extends Component {
   constructor(props) {
@@ -69,7 +70,7 @@ class App extends Component {
 render(){
   return (
 
-    <div> 
+    <div class='card'> 
     <input onChange={(event) => this.setState({searchQuery: event.target.value})} placeholder="Search"></input>
     <button onClick={this.getLocation}>Explore!</button>
 
@@ -80,7 +81,7 @@ render(){
       <Card style={{ width: '40rem' }}>
       <Card.Img variant="top" src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_APIKEY}&center=${this.state.location.lat},${this.state.location.lon}&zoom=12`} />
       <Card.Body>
-        <Card.Title>Lat & Long</Card.Title>
+        <Card.Title>City Data</Card.Title>
         <Card.Text>
         </Card.Text>
       </Card.Body>
@@ -89,6 +90,8 @@ render(){
         <ListGroupItem>Longitude: {this.state.location.lon}</ListGroupItem>
       </ListGroup>
       <Card.Body>
+      <h2>5 Day Forecast</h2>
+      <Weather weather={this.state.weather}/>
       </Card.Body>
     </Card>
     )}
